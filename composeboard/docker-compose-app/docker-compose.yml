@@ -33,17 +33,18 @@ services:
     ports:
       - "8806:8806"
 
-  # Contact service
-  contact-ms:
-    build: ../../Contact-MS
-    environment:
-      - spring.datasource.url=jdbc:mysql://mysql:3306/projet?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=null
-      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
-    ports:
-      - "8805:8805"
-    image: contact-service
+ # Contact service
+contact-ms:
+  build: ../../Contact-MS
+  environment:
+    - spring.datasource.url=jdbc:mysql://mysql:3306/projet?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    - SPRING_DATASOURCE_USERNAME=root
+    - SPRING_DATASOURCE_PASSWORD=
+    - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+  ports:
+    - "8805:8805"
+  image: contact-service
+
 
   # MySQL service
   mysql:
