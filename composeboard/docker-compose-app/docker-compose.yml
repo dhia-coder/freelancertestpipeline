@@ -38,15 +38,14 @@ services:
     image: contact-service
 
   mysql:
-  image: mysql:8.0.23
-  environment:
-    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-    - MYSQL_DATABASE=projet
-  ports:
-    - "3307:3306"
-  volumes:
-    - /var/lib/mysql
-
+    image: mysql:8.0.23
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=projet
+    ports:
+      - "3307:3306"
+    volumes:
+      - /var/lib/mysql
 
   projet-ms:
     build: ../../Projet_MS
